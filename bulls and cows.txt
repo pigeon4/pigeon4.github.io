@@ -1,0 +1,62 @@
+import random
+import math
+playing = True
+while playing :
+    bulls = 0
+    cows = 0
+    guess = int(input("guess?"))
+    qsecret = random.randint
+    wsecret = random.randint
+    esecret = random.randint
+    rsecret = random.randint
+    while wsecret == qsecret :
+        wsecret = random.randint
+    while esecret == qsecret or esecret == wsecret :
+        esecret = random.randint
+    while rsecret == qsecret or rsecret == wsecret or rsecret == esecret:
+        rsecret = random.randint
+    qqsecret = qsecret*1000
+    wwsecret = wsecret*100
+    eesecret = esecret*10
+    rrsecret = rsecret
+    aqsecret = math.ceil(guess / qqsecret)
+    awsecret = math.ceil(guess / wwsecret)
+    aesecret = math.ceil(guess / eesecret)
+    arsecret = math.ceil(guess / rrsecret)
+    gqsecret = math.floor(guess / 1000)
+    gwsecret = math.floor(guess / 100)
+    gesecret = math.floor(guess / 10)
+    grsecret = guess
+    while 10>gwsecret :
+        gwsecret = gwsecret - 10
+    while 10>gesecret :
+        gesecret = gesecret - 10
+    while 10>grsecret :
+        grsecret = grsecret - 10
+    while 10>awsecret :
+        awsecret = awsecret - 10
+    while 10>aesecret :
+        aesecret = aesecret - 10
+    while 10>arsecret :
+        arsecret = arsecret - 10
+    if gqsecret == wsecret or gqsecret == esecret or gqsecret == rsecret :
+        cows = cows + 1
+    if gwsecret == qsecret or gwsecret == esecret or gwsecret == rsecret :
+        cows = cows + 1
+    if gesecret == qsecret or gesecret == wsecret or gesecret == rsecret :
+        cows = cows + 1
+    if grsecret == qsecret or grsecret == wsecret or grsecret == esecret :
+        cows = cows + 1
+    if gqsecret == qsecret :
+        bulls = bulls + 1
+    if gwsecret == wsecrat :
+        bulls = bulls + 1
+    if gesecret == esecret :
+        bulls = bulls + 1
+    if grsecret == rsecret :
+        bulls = bulls + 1
+    print (bulls,"bulls and",cows,"cows")
+    if bulls == 4 :
+        print("you won")
+        playing = int(input("do you want to play again(True for yes, False for no)"))
+    
