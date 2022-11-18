@@ -1,0 +1,45 @@
+import random
+import math
+
+#0
+qsecret = random.randint(0,9)
+#1
+wsecret = random.randint(0,9)
+while qsecret == wsecret :
+    wsecret = random.randint(0,9)
+#2
+esecret =random.randint(0,9)
+while esecret == qsecret or esecret == wsecret :
+    esecret = random.randint(0,9)
+#3
+rsecret = random.randint(0,9)
+while rsecret == qsecret or rsecret == wsecret or rsecret == esecret :
+   rsecret = random.randint(0,9)
+playing = True
+while playing :
+    bulls = 0
+    cows = 0
+    guess = input("guess?")
+    if guess[0] == str(wsecret) or guess[0] == str(esecret) or guess[0] == str(rsecret) :
+         cows = cows + 1
+    if guess[1] == str(qsecret) or guess[1] == str(esecret) or guess[1] == str(rsecret) :
+        cows = cows + 1
+    if guess[2] == str(qsecret) or guess[2] == str(wsecret) or guess[2] == str(rsecret) :
+         cows = cows + 1
+    if guess[3] == str(qsecret) or guess[3] == str(wsecret) or guess[3] == str(esecret) :
+       cows = cows + 1
+    if guess[0] == str(qsecret) :
+        bulls = bulls + 1
+    if guess[1] == str(wsecret) :
+        bulls = bulls + 1
+    if guess[2] == str(esecret) :
+        bulls = bulls + 1
+    if guess[3] == str(rsecret) :
+        bulls = bulls + 1
+    if bulls == 4 :
+        print("you won")
+        playing = False
+        print("to play again, run the program again.")
+    else:
+        print(bulls,"bulls and",cows,"cows")
+
